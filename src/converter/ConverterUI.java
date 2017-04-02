@@ -3,7 +3,6 @@ package converter;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -21,7 +20,6 @@ public class ConverterUI extends JFrame {
 	private JButton convert;
 	private JButton clear;
 	private JLabel equal;
-	private JOptionPane message;
 	private JRadioButton leftToRight;
 	private JRadioButton rightToLeft;
 	private JPanel panel1 = new JPanel();
@@ -65,6 +63,7 @@ public class ConverterUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				rightToLeft.setSelected(false);
+				leftToRight.setSelected(true);
 				direction = true;
 				textLeft.setEnabled(true);
 				textRight.setEnabled(false);
@@ -74,6 +73,7 @@ public class ConverterUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				leftToRight.setSelected(false);
+				rightToLeft.setSelected(true);
 				direction = false;
 				textRight.setEnabled(true);
 				textLeft.setEnabled(false);
